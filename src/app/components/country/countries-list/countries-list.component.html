@@ -1,1 +1,35 @@
-<p>countries-list works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Countries List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let country of countries; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveCountry(country, i)"
+      >
+        {{ country.name }}
+      </li>
+    </ul>
+    <div *ngIf="errors !== ''">
+      <p class="alert alert-danger">Something went wrong! Please try again later.</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentCountry">
+      <h4>Country</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentCountry.name }}
+      </div>
+
+      <a class="badge badge-warning p-2" routerLink="/countries/{{ currentCountry.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentCountry">
+      <br />
+      <p>Please click on a Country...</p>
+    </div>
+  </div>
+</div>
