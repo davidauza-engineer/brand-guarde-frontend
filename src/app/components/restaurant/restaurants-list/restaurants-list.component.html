@@ -1,1 +1,45 @@
-<p>restaurants-list works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Restaurants List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let restaurant of restaurants; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveRestaurant(restaurant, i)"
+      >
+        {{ restaurant.name }}
+      </li>
+    </ul>
+    <div *ngIf="errors !== ''">
+      <p class="alert alert-danger">Something went wrong! Please try again later.</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentRestaurant">
+      <h4>Restaurant</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentRestaurant.name }}
+      </div>
+      <div *ngIf="currentRestaurant.address !== ''">
+        <label><strong>Address:</strong></label>
+        {{ currentRestaurant.address }}
+      </div>
+      <div>
+        <label><strong>Chain_id:</strong></label> {{ currentRestaurant.chain_id }}
+      </div>
+      <div>
+        <label><strong>Country_id:</strong></label> {{ currentRestaurant.country_id }}
+      </div>
+
+      <a class="badge badge-warning p-2" routerLink="/restaurants/{{ currentRestaurant.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentRestaurant">
+      <br />
+      <p>Please click on a Restaurant...</p>
+    </div>
+  </div>
+</div>
