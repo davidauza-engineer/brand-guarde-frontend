@@ -1,1 +1,43 @@
-<p>reviews-list works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Reviews List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let review of reviews; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveReview(review, i)"
+      >
+        {{ review.body }}
+      </li>
+    </ul>
+    <div *ngIf="errors !== ''">
+      <p class="alert alert-danger">Something went wrong! Please try again later.</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentReview">
+      <h4>Review</h4>
+      <div>
+        <label><strong>User_id:</strong></label> {{ currentReview.user_id }}
+      </div>
+      <div>
+        <label><strong>Restaurant_id:</strong></label>
+        {{ currentReview.restaurant_id }}
+      </div>
+      <div>
+        <label><strong>Body:</strong></label>
+        {{ currentReview.body }}
+      </div>
+
+      <a class="badge badge-warning p-2" routerLink="/reviews/{{ currentReview.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentReview">
+      <br />
+      <p>Please click on a Review...</p>
+    </div>
+  </div>
+</div>
