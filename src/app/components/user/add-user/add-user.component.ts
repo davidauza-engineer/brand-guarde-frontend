@@ -14,6 +14,7 @@ export class AddUserComponent implements OnInit {
     password_confirmation: ''
   };
   submitted = false;
+  errors = '';
 
   constructor(private userService: UserService) { }
 
@@ -22,25 +23,30 @@ export class AddUserComponent implements OnInit {
 
   saveUser() {
     const data = {
-      name: this.user.name,
-      email: this.user.email,
-      password: this.user.password,
-      password_confirmation: this.user.password_confirmation
+      user: {
+        name: this.user.name,
+        email: this.user.email,
+        password: this.user.password,
+        password_confirmation: this.user.password_confirmation
+      }
     };
 
     this.userService.create(data)
       .subscribe(
         response => {
           console.log(response);
+          this.errors = ''
           this.submitted = true;
         },
         error => {
           console.log(error);
+          this.errors = JSON.stringify(error.error);
         });
   }
 
   newUser() {
     this.submitted = false;
+    this.errors = ''
     this.user = {
       name: '',
       email: '',
