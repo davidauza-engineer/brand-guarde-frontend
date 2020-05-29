@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from "@angular/forms";
+import { HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddUserComponent } from './components/user/add-user/add-user.component';
 import { UserDetailsComponent } from './components/user/user-details/user-details.component';
-import { UserListComponent } from './components/user/user-list/user-list.component';
 import { AddReviewComponent } from './components/review/add-review/add-review.component';
 import { ReviewDetailsComponent } from './components/review/review-details/review-details.component';
 import { ReviewsListComponent } from './components/review/reviews-list/reviews-list.component';
@@ -25,7 +26,6 @@ import { CountriesListComponent } from './components/country/countries-list/coun
     AppComponent,
     AddUserComponent,
     UserDetailsComponent,
-    UserListComponent,
     AddReviewComponent,
     ReviewDetailsComponent,
     ReviewsListComponent,
@@ -42,7 +42,9 @@ import { CountriesListComponent } from './components/country/countries-list/coun
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
