@@ -1,41 +1,64 @@
 <div>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a routerLink="/" class="navbar-brand">Brand Guarde</a>
-    <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a routerLink="users" class="nav-link">Users</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="new-user" class="nav-link">New User</a>
-      </li>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a routerLink="/" class="navbar-brand">Brand Guarde</a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <li class="nav-item">
-        <a routerLink="reviews" class="nav-link">Reviews</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="new-review" class="nav-link">New Review</a>
-      </li>
+      <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" ngbDropdown>
+            <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown1" role="button">
+              Users
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu dropdown-menu-right">
+              <a ngbDropdownItem routerLink="users" (click)="$event.preventDefault()">Users</a>
+              <a ngbDropdownItem routerLink="new-user" (click)="$event.preventDefault()">New User</a>
+            </div>
+          </li>
 
-      <li class="nav-item">
-        <a routerLink="restaurants" class="nav-link">Restaurants</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="new-restaurant" class="nav-link">New Restaurant</a>
-      </li>
+          <li class="nav-item" ngbDropdown>
+            <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown2" role="button">
+              Reviews
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
+              <a ngbDropdownItem routerLink="reviews" (click)="$event.preventDefault()">Reviews</a>
+              <a ngbDropdownItem routerLink="new-review" (click)="$event.preventDefault()">New Review</a>
+            </div>
+          </li>
 
-      <li class="nav-item">
-        <a routerLink="chains" class="nav-link">Chains</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="new-chain" class="nav-link">New Chain</a>
-      </li>
+          <li class="nav-item" ngbDropdown>
+            <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown3" role="button">
+              Restaurants
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu dropdown-menu-right">
+              <a ngbDropdownItem routerLink="restaurants" (click)="$event.preventDefault()">Restaurants</a>
+              <a ngbDropdownItem routerLink="new-restaurant" (click)="$event.preventDefault()">New Restaurant</a>
+            </div>
+          </li>
 
-      <li class="nav-item">
-        <a routerLink="countries" class="nav-link">Countries</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="new-country" class="nav-link">New Country</a>
-      </li>
+          <li class="nav-item" ngbDropdown>
+            <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown4" role="button">
+              Chains
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown4" class="dropdown-menu dropdown-menu-right">
+              <a ngbDropdownItem routerLink="chains" (click)="$event.preventDefault()">Chains</a>
+              <a ngbDropdownItem routerLink="new-chain" (click)="$event.preventDefault()">New Chain</a>
+            </div>
+          </li>
+
+          <li class="nav-item" ngbDropdown>
+            <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown5" role="button">
+              Countries
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown5" class="dropdown-menu dropdown-menu-right">
+              <a ngbDropdownItem routerLink="countries" (click)="$event.preventDefault()">Countries</a>
+              <a ngbDropdownItem routerLink="new-country" (click)="$event.preventDefault()">New Country</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 

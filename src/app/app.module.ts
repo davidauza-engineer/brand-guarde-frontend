@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from "@angular/forms";
 import { HttpClientModule} from "@angular/common/http";
+import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { ChainsListComponent } from './components/chain/chains-list/chains-list.
 import { AddCountryComponent } from './components/country/add-country/add-country.component';
 import { CountryDetailsComponent } from './components/country/country-details/country-details.component';
 import { CountriesListComponent } from './components/country/countries-list/countries-list.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +40,15 @@ import { CountriesListComponent } from './components/country/countries-list/coun
     ChainsListComponent,
     AddCountryComponent,
     CountryDetailsComponent,
-    CountriesListComponent
+    CountriesListComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

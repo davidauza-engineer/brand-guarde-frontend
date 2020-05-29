@@ -16,9 +16,12 @@ import { ChainsListComponent } from './components/chain/chains-list/chains-list.
 import { AddCountryComponent } from './components/country/add-country/add-country.component';
 import { CountryDetailsComponent } from './components/country/country-details/country-details.component';
 import { CountriesListComponent } from './components/country/countries-list/countries-list.component';
+import { WelcomeComponent} from "./components/welcome/welcome.component";
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: 'welcome', component: WelcomeComponent },
   { path: 'users', component: UsersListComponent },
   { path: 'users/:id', component: UserDetailsComponent },
   { path: 'new-user', component: AddUserComponent },
