@@ -19,22 +19,21 @@ import { CountriesListComponent } from './components/country/countries-list/coun
 
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
   { path: 'users', component: UsersListComponent },
   { path: 'users/:id', component: UserDetailsComponent },
-  { path: 'users/new', component: AddUserComponent },
+  { path: 'new-user', component: AddUserComponent },
   { path: 'reviews', component: ReviewsListComponent },
   { path: 'reviews/:id', component: ReviewDetailsComponent },
-  { path: 'reviews/new', component: AddReviewComponent },
+  { path: 'new-review', component: AddReviewComponent },
   { path: 'restaurants', component: RestaurantsListComponent },
   { path: 'restaurants/:id', component: RestaurantDetailsComponent },
-  { path: 'restaurants/new', component: AddRestaurantComponent },
+  { path: 'new-restaurant', component: AddRestaurantComponent },
   { path: 'chains', component: ChainsListComponent },
   { path: 'chains/:id', component: ChainDetailsComponent },
-  { path: 'restaurants/new', component: AddChainComponent },
+  { path: 'new-chain', component: AddChainComponent },
   { path: 'countries', component: CountriesListComponent },
   { path: 'countries/:id', component: CountryDetailsComponent },
-  { path: 'countries/new', component: AddCountryComponent }
+  { path: 'new-country', component: AddCountryComponent }
 ];
 
 @NgModule({
