@@ -1,1 +1,61 @@
-<p>add-restaurant works!</p>
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="chain_id">Chain_id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="chain_id"
+        required
+        [(ngModel)]="restaurant.chain_id"
+        name="chain_id"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="country_id">Country_id</label>
+      <input
+        class="form-control"
+        type="number"
+        id="country_id"
+        required
+        [(ngModel)]="restaurant.country_id"
+        name="country_id"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        class="form-control"
+        type="text"
+        id="name"
+        required
+        [(ngModel)]="restaurant.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address <em>(Optional)</em></label>
+      <input
+        class="form-control"
+        type="text"
+        id="address"
+        [(ngModel)]="restaurant.address"
+        name="address"
+      />
+    </div>
+
+    <button (click)="saveRestaurant()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newRestaurant()">Create New Restaurant</button>
+  </div>
+
+  <div *ngIf="errors !== ''">
+    <p class="alert alert-danger">{{ errors }}</p>
+  </div>
+</div>
