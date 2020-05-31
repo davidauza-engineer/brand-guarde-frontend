@@ -1,1 +1,33 @@
-<p>review-details works!</p>
+<div *ngIf="currentReview" class="edit-form">
+  <h4>Review</h4>
+  <form>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <input
+        type="text"
+        class="form-control"
+        id="body"
+        [(ngModel)]="currentReview.body"
+        name="body"
+      />
+    </div>
+  </form>
+
+  <button class="badge badge-danger mr-2 p-2" (click)="deleteReview()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success p-2" (click)="updateReview()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentReview">
+  <br />
+  <p>Cannot access this Review...</p>
+</div>
+
+<div *ngIf="errors !== ''">
+  <p class="alert alert-danger">{{ errors }}</p>
+</div>
