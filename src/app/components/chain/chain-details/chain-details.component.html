@@ -1,1 +1,33 @@
-<p>chain-details works!</p>
+<div *ngIf="currentChain" class="edit-form">
+  <h4>Chain</h4>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="currentChain.name"
+        name="name"
+      />
+    </div>
+  </form>
+
+  <button class="badge badge-danger mr-2 p-2" (click)="deleteChain()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success p-2" (click)="updateChain()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentChain">
+  <br />
+  <p>Cannot access this Chain...</p>
+</div>
+
+<div *ngIf="errors !== ''">
+  <p class="alert alert-danger">{{ errors }}</p>
+</div>
