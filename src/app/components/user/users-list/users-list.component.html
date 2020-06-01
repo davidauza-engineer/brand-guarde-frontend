@@ -18,6 +18,9 @@
   <div class="col-md-6">
     <div *ngIf="currentUser">
       <h4>User</h4>
+      <div *ngIf="currentUser.profile_picture">
+        <img width="96" height="96" src="{{ currentUser.profile_picture.url }}" alt="User's profile picture">
+      </div>
       <div>
         <label><strong>Name:</strong></label> {{ currentUser.name }}
       </div>

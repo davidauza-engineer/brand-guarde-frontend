@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageSnippet } from './image-snippet';
 import { ImageService} from "../../services/image/image.service";
-import { ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-profile-picture',
@@ -12,7 +12,10 @@ export class ProfilePictureComponent implements OnInit {
   selectedFile: ImageSnippet;
   userId: string;
 
-  constructor(private imageService: ImageService, private route: ActivatedRoute) { }
+  constructor(
+    private imageService: ImageService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
   }
@@ -25,6 +28,7 @@ export class ProfilePictureComponent implements OnInit {
       this.selectedFile = new ImageSnippet(event.target.result, file);
       this.imageService.uploadImage(this.selectedFile.file, this.userId).subscribe(
         response => {
+          window.location.reload();
         },
         error => {
         }

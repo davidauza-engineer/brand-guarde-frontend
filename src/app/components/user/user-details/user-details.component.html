@@ -1,6 +1,9 @@
 <div *ngIf="currentUser" class="edit-form">
   <h4>User</h4>
   <form>
+    <div *ngIf="currentUser.profile_picture">
+      <img width="96" height="96" src="{{ currentUser.profile_picture.url }}" alt="User's profile picture">
+    </div>
     <app-profile-picture></app-profile-picture>
     <div class="form-group">
       <label for="name">Name</label>
