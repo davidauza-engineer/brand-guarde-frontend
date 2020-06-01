@@ -22,6 +22,7 @@ import { AddCountryComponent } from './components/country/add-country/add-countr
 import { CountryDetailsComponent } from './components/country/country-details/country-details.component';
 import { CountriesListComponent } from './components/country/countries-list/countries-list.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     AddCountryComponent,
     CountryDetailsComponent,
     CountriesListComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,

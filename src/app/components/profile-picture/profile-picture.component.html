@@ -1,0 +1,10 @@
+<form class="form-group">
+  <label for="profile_picture">Update Profile Picture</label>
+  <input #profile_picture
+         type="file"
+         accept="image/*"
+         class="form-control-file"
+         id="profile_picture"
+         (change)="processFile(profile_picture)"
+   >
+</form>
