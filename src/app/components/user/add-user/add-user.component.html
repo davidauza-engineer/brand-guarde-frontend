@@ -1,0 +1,63 @@
+<h1 class="h4">Create a New User</h1>
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="user.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        class="form-control"
+        type="email"
+        id="email"
+        required
+        [(ngModel)]="user.email"
+        name="email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        class="form-control"
+        type="password"
+        id="password"
+        required
+        [(ngModel)]="user.password"
+        name="password"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password_confirmation">Password Confirmation</label>
+      <input
+        class="form-control"
+        type="password"
+        id="password_confirmation"
+        required
+        [(ngModel)]="user.password_confirmation"
+        name="password_confirmation"
+      />
+    </div>
+
+    <button (click)="saveUser()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newUser()">Create New User</button>
+  </div>
+
+  <div *ngIf="errors !== ''">
+    <p class="alert alert-danger">{{ errors }}</p>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<h1 class="h4">Create a New Chain</h1>
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="chain.name"
+        name="name"
+      />
+    </div>
+
+    <button (click)="saveChain()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newChain()">Create New Chain</button>
+  </div>
+
+  <div *ngIf="errors !== ''">
+    <p class="alert alert-danger">{{ errors }}</p>
+  </div>
+</div>
